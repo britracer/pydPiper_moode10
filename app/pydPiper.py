@@ -106,8 +106,8 @@ class music_controller(threading.Thread):
         for s in self.servicelist:
             s = s.lower()
             try:
-                if s == u"volumio2":
-                    musicservice = sources.musicdata_volumio.musicdata_volumio2(self.musicqueue, pydPiper_config.VOLUMIO_SERVER, pydPiper_config.VOLUMIO_PORT, exitapp )
+                if s == u"moode":
+                    musicservice = sources.musicdata_mpd.musicdata_mpd(self.musicqueue, pydPiper_config.MPD_SERVER, pydPiper_config.MPD_PORT, pydPiper_config.MPD_PASSWORD )
                 elif s == u"volumio3":
                     musicservice = sources.musicdata_volumio.musicdata_volumio3(self.musicqueue, pydPiper_config.VOLUMIO_SERVER, pydPiper_config.VOLUMIO_PORT, exitapp )
                 else:
